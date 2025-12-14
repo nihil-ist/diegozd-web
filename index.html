@@ -2,39 +2,212 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>diegozd</title>
+  <title>diego zamora</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Página personal de Diego Zamora Delgadillo" />
+  <meta name="description" content="diego zamora's main page" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
+    :root {
+      --lavender: #bcbcf2;
+      --lavender-strong: #d7d7ff;
+      --deep-plum: #0b0a1d;
+      --night: #060511;
+      --text: #f1f1ff;
+      --muted: #b5b6e0;
+      --card: rgba(12, 10, 31, 0.78);
+      --border: rgba(188, 188, 242, 0.26);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
+      font-family: 'Sora', 'DM Sans', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(1200px circle at 18% 18%, rgba(188, 188, 242, 0.18), transparent),
+          radial-gradient(900px circle at 82% 0%, rgba(215, 215, 255, 0.16), transparent),
+          linear-gradient(135deg, var(--night), var(--deep-plum));
+      color: var(--text);
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .card {
+      width: min(900px, 100%);
+      padding: 2.5rem;
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(14px);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (max-width: 720px) {
+      .card {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      letter-spacing: -0.02em;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.55rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(188, 188, 242, 0.12);
+      color: var(--lavender-strong);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .intro {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .role {
+      font-size: 1.1rem;
+      color: var(--muted);
       margin: 0;
     }
-    .card {
-      max-width: 500px;
-      padding: 2rem;
-      border-radius: 1rem;
-      background: #020617;
-      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+
+    .about {
+      margin: 0;
+      line-height: 1.8;
+      color: #d5d7f2;
     }
-    h1 { margin-top: 0; font-size: 2rem; }
-    a { color: #38bdf8; text-decoration: none; }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 0.95rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(188, 188, 242, 0.12);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .pill:hover {
+      transform: translateY(-2px);
+      border-color: rgba(188, 188, 242, 0.7);
+      box-shadow: 0 12px 30px rgba(188, 188, 242, 0.18);
+    }
+
+    .meta {
+      display: grid;
+      gap: 1.2rem;
+      align-content: start;
+      background: rgba(188, 188, 242, 0.1);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .meta h3 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .meta-list {
+      display: grid;
+      gap: 0.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .meta-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text);
+    }
+
+    .bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--lavender-strong);
+      box-shadow: 0 0 0 8px rgba(188, 188, 242, 0.1);
+      flex-shrink: 0;
+    }
+
+    .footer-note {
+      margin-top: 0.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a { color: inherit; }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>diego zamora</h1>
-    <p>software developer</p>
-    <p>
-      📧 <a href="mailto:contact@diegozd.com">contact@diegozd.com</a><br>
-      🔗 <a href="https://www.linkedin.com/in/diegozd" target="_blank">linkedin</a>
-    </p>
+    <div class="intro">
+      <span class="tag">diego zamora • software</span>
+      <div>
+        <h1>Building reliable systems with clarity.</h1>
+        <p class="role">Java/Spring Boot engineer focused on AWS-ready backends and polished Angular frontends.</p>
+      </div>
+      <p class="about">
+        I design and ship services that stay fast, observable, and easy to evolve—bridging product, design,
+        and engineering to keep teams aligned and velocity high.
+      </p>
+      <div class="links">
+        <a class="pill" href="mailto:contact@diegozd.com">📧 Email</a>
+        <a class="pill" href="https://www.linkedin.com/in/diegozd" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a class="pill" href="https://github.com/nihil-ist" target="_blank" rel="noopener">💻 GitHub</a>
+      </div>
+      <p class="footer-note">Based in MX • Available for collaborations and interesting problems.</p>
+    </div>
+
+    <div class="meta">
+      <h3>Focus areas</h3>
+      <ul class="meta-list">
+        <li><span class="bullet"></span>Java & Spring Boot services</li>
+        <li><span class="bullet"></span>AWS architectures and ops</li>
+        <li><span class="bullet"></span>Angular experiences with DX in mind</li>
+        <li><span class="bullet"></span>CI/CD pipelines that stay green</li>
+      </ul>
+
+      <h3>Tech I use</h3>
+      <ul class="meta-list">
+        <li><span class="bullet"></span>Java, Spring Boot, Spring Cloud</li>
+        <li><span class="bullet"></span>AWS (ECS/Fargate, Lambda, RDS, S3)</li>
+        <li><span class="bullet"></span>Angular, TypeScript, clean UI patterns</li>
+        <li><span class="bullet"></span>CI/CD (GitHub Actions), testing, observability</li>
+      </ul>
+    </div>
   </div>
 </body>
 </html>
